@@ -1,0 +1,38 @@
+<div>
+
+<!-- SEARCH -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<input type="search" placeholder="Search&hellip;" ng-model="productTitle" />
+				</div>
+			</div>
+		</div>
+		<!-- /SEARCH -->
+
+		<!-- CATEGORIES -->
+		<div class="row">
+			<ul>
+				<li ng-repeat="category in categories" class="checkbox">
+					<input type="checkbox" ng-click="categoryChange(category.category)">{{category.category}}
+				</li>
+			</ul>
+		</div>
+		<!-- /CATEGORIES -->
+
+		<h1>Buy one of our amazing statues here!</h1>
+
+		<div ng-repeat="product in products | filter:productTitle | filter:productFilter" class="items">
+		
+			<p>Item: <a ng-href="#/product/{{ product.id }}"> {{ product.title }} </a></p>
+			<p>Price: {{ product.price }}</p>
+			<p>Category: {{ product.category }}</p>
+			<img src="img/{{ product.image }}">
+			<form ng-submit="addToCart(product)">
+            <input type="number" ng-model="quantity">
+            <button class="button" type="submit">Buy</button>
+            </form>
+		</div>
+
+
+</div>

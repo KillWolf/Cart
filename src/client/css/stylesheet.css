@@ -1,0 +1,46 @@
+.cart	{
+	position: absolute;
+	right: 10px;
+	width: 250px;
+	border: 1px solid black;
+	padding: 5px;
+}
+.checkbox	{
+	list-style-type: none;
+	max-width: 100px;
+}
+/*
+.button	{
+	border: 1px solid black;
+	border-radius: 5px;
+	background: black;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+.button:hover {
+	background: green;
+}
+*/
+.items	{
+	border: 1px solid black;
+	padding: 5px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.userForm 	{
+	max-width: 400px;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.products	{
+	border: 1px solid black;
+	margin-top: 20px;
+	display: inline-block;
+}

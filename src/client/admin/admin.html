@@ -1,0 +1,26 @@
+
+<div>
+	<h1>Admin Panel</h1>
+
+	<div ng-controller="adminController">
+		<table border="1px" class="table table-striped">
+		<tr>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>CurrencyType</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="product in products" >
+			<td>{{ product.name }}</td>
+			<td>{{ product.price }}</td>
+			<td>{{ product.category }}</td>
+			<td>
+				<button class="btn btn-success"><a href="#/admin/create">Create</a></button>
+				<button class="btn btn-warning" ng-click="find(product.name)"><a href="#/admin/edit">Edit </a></button>
+				<button class="btn btn-danger" ng-click="delete(product.name)">Delete</button>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
