@@ -12,10 +12,10 @@
 		};
 
 		// sending variables with data to service
-		$scope.sendCust = function(customer){
+		$scope.sendCust = function(cartProduct){
                   var custEmail = this.custEmail;
                   var custName = this.custName;
-                  console.log(custEmail, custName);
+                  console.log(cartProduct)
                   cartService.sendCustData(custEmail, custName);
                }
 

@@ -14,13 +14,25 @@
         			templateUrl: './products/product.html',
         			controller: 'productController'
         		})
-        		.when('/', {
-        			templateUrl: './products/products.html',
-        			controller: 'productsController'
-        		})
+                        .when('/admin/create', {
+                                 templateUrl:"./admin/create.html",
+                                 controller:"adminController"
+                        })
+                        .when('/admin/edit/:id', {
+                                templateUrl:"./admin/edit.html",
+                                controller:"adminController"
+                        })
+        		        .when('/', {
+        			         templateUrl: './products/products.html',
+        		              	controller: 'productsController'
+        		        })
                         .when('/checkout', {
                                 templateUrl: './cart/checkout.html',
                                 controller: 'cartController'
+                        })
+                        .when('/confirm', {
+                            templateUrl:"./cart/confirmed.html",
+                            controller:""
                         })
                         .when('/admin', {
                                 templateUrl: './admin/admin.html',

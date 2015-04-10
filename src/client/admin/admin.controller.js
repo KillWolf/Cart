@@ -6,21 +6,14 @@
     .controller("adminController", adminController);
 
 
-    function adminController ($scope, adminService, productsService){
+
+    function adminController ($scope, adminService, productsService, $routeParams){
 
       $scope.delete = function(id){
         adminService.deleteProduct(id);
+        console.log(id)
       }
 
-      $scope.find = function(id){
-        console.log(id);
-        adminService.getProduct(id).then(makeProduct);
-      }
-
-      var makeProduct = function(data){
-        console.log(data);
-        $scope.productx = data;
-      }
 
       var makeProducts = function(data){
         $scope.products = data;
@@ -33,7 +26,15 @@
       productsService.getProducts().then(makeProducts);
       productsService.getCategories().then(makeService);
 
+        adminService.getProductById($routeParams.id)
+        .then(function(data){
+          $scope.productx = data;
+          console.log(data);
+        });
+
     }
+
+      })();
 
 
 

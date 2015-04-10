@@ -21,15 +21,30 @@
 			}	
 
 		}
-		// Trying to put customer data in array (not working)
-		var sendCustData = function(customer, custEmail, custName){
+
+		
+		// Trying to put customer data in array
+		var sendCustData = function(custEmail, custName){
+			$rootScope.custData = {};
 			
-			$rootScope.customer = {
-				custEmail: custEmail,
-				custName: custName
+			$http.post('api/order', {
+				"custName": custName,
+				"custEmail": custEmail,
+				"Products": new Array($rootScope.cartProducts)
+		 	});
+
+			$rootScope.custData["custBasket"] = {
+				"Customer": {custName: {"custName": custName,
+										"custEmail": custEmail}
+
+										},
+				"products": $rootScope.cartProducts					
+				
+
 			}
-			console.log(customer);
+			console.log($rootScope.custData);
 		}		
+
 
 		var deleteProd = function(cartProduct){
 			delete $rootScope.cartProducts[cartProduct.title];

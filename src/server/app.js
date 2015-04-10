@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 // Routes set up
 var router 	= express.Router();
 var product = require('./controllers/api/product');
+var order = require('./controllers/api/order')
 
 // Get all products
 router.get('/api/products', product.getAll);
@@ -24,10 +25,18 @@ router.get('/api/products', product.getAll);
 // Create a product
 router.post('/api/product', product.create);
 
+router.get('/api/productById/:id', product.readById);
+
+router.post('/api/productUpdate/:id', product.update);
+
+router.post('/api/order', order.create)
+
+router.get('/api/orders', order.getAll)
+
 
 // Get one product, update one product, delete one product
 router.route('/api/product/:id')
-	.get(product.read)
+	//.get(product.read)
 	.put(product.update)
 	.delete(product.delete);
 

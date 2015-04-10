@@ -1,6 +1,6 @@
 <p>Checkout</p>
 
-<form role="form" class="userForm" ng-submit="sendCust()">
+<form role="form" class="userForm">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" id="email" ng-model="custEmail">
@@ -16,7 +16,7 @@
   <div class="checkbox">
     <label><input type="checkbox"> Newsletter</label>
   </div> -->
-  <button type="submit" class="btn btn-default">Submit</button>
+  
 </form>
 
 
@@ -28,7 +28,7 @@
       <button ng-click="deleteProd(cartProduct.product)" class="btn">Delete</button>
     </div>
       <form>
-      		<button type="submit" class="btn btn-default">Confirm order</button>
+      		<a href="#/confirm/"><input type="button" ng-click="sendCust()" class="btn btn-default" value="Confirm"></a>
 			    <button type="submit" class="btn btn-default" ng-href="#/">Continue shopping</button>
       </form>   
 	</table>

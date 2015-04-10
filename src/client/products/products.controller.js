@@ -4,9 +4,8 @@
      angular
           .module("Main.products", [])
           .controller('productsController', productsController)
-          .directive("productWidget", productWidget);
 
-          function productsController($scope, productsService, cartService, $rootScope){
+          function productsController($scope, productsService, cartService, $rootScope, $routeParams){
                
                var modelProducts = function(data){
                     $scope.products = data;
@@ -15,6 +14,7 @@
                var modelCategories = function(data){
                     $scope.categories = data;
                }
+
 
                $scope.addToCart = function(product){
                   var quantity = this.quantity;
@@ -27,6 +27,8 @@
           productsService.getCategories()
                .then(modelCategories);
                   
+
+
 
 
           var updateCategoriesSelected = function(){
@@ -45,18 +47,5 @@
           updateCategoriesSelected();
      }
 
-     function productWidget(){
-          var widget = {
-               templateUrl: "./products/product.widget.html",
-               restrict: "E",
-               controller: function($scope){
-                    $scope.buyme = function(product){
-                         console.log(product);
-                    }
-               }
-          }
-
-          return widget;
-     } 
 
 }());

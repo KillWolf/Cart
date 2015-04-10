@@ -1,0 +1,18 @@
+
+<h3>You're Editing {{ productx.name }}</h3>
+
+<div>
+		<form method="post" action="{{ '/api/productUpdate/' + productx._id }} ">
+		Image<input type="text" name="image" value="{{ productx.image }}"></input>
+		<br>
+		Name<input type="text" name="name" value="{{ productx.title}}"></input>
+		<br>
+		Price<input type="text" name="price" value="{{ productx.price }}"></input>
+		<br>
+		Currency Type<input type="text" name="currencytype" value="{{ productx.currencytype }}"></input>
+		<br>
+		Category<input type="text" name="category" value="{{ productx.category }}"></input>
+		<br>
+		<input type="submit">
+	</form>
+</div>

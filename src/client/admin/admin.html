@@ -8,19 +8,19 @@
 			<th>Product</th>
 			<th>Price</th>
 			<th>Category</th>
-			<th>CurrencyType</th>
 			<th>Actions</th>
 		</tr>
 		<tr ng-repeat="product in products" >
-			<td>{{ product.name }}</td>
+			<td>{{ product.title }}</td>
 			<td>{{ product.price }}</td>
 			<td>{{ product.category }}</td>
 			<td>
-				<button class="btn btn-success"><a href="#/admin/create">Create</a></button>
-				<button class="btn btn-warning" ng-click="find(product.name)"><a href="#/admin/edit">Edit </a></button>
-				<button class="btn btn-danger" ng-click="delete(product.name)">Delete</button>
+		
+				<button class="btn btn-warning"><a href="#/admin/edit/{{product._id}}" style="color: white">Edit </a></button>
+				<button class="btn btn-danger" ng-click="delete(product._id)">Delete</button>
 			</td>
 		</tr>
 		</table>
+				<button class="btn btn-success"><a href="#/admin/create" style="color:white">Create</a></button>
 	</div>
 </div>

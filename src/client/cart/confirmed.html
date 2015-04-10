@@ -1,0 +1,32 @@
+
+	<div>
+		<div>
+			<h3>Purchased Products</h3>
+			<table class="table table-striped">
+				<tr>	
+					<th>Item</th>
+					<th>Qty</th>
+					<th>Price</th>
+				</tr>
+				<tr ng-repeat="product in custData.custBasket.products">
+						<td>
+							{{ product.product.title }}
+						</td>
+						<td>
+							{{ product.quantity }}
+						</td>
+						<td>
+							{{ product.product.price }}
+						</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+			<h2>Your information</h2>
+			<div ng-repeat="cust in custData.custBasket.Customer">
+				<p>{{ cust.custName}}</p>
+				<p>{{ cust.custEmail }}</p>
+			</div>
+		
+		

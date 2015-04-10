@@ -11,13 +11,22 @@
 
 			return $http.get("/api/product/" + id)
 						.then(function(response){
-								//setProducts(response.data)
+								
 								return response.data;
 				})
 		}
 
+		var getProductById = function(id){
+
+			return $http.get("/api/productById/" + id)
+						.then(function(response){
+								return response.data;
+				});
+		}
+
 		return {
 			getProduct: getProduct,
+			getProductById: getProductById,
 			deleteProduct: deleteProduct
 		}
 
